@@ -15,6 +15,7 @@ public class DadJokessssApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(DadJokessssApplication.class, args);
         DadJokeRepository dbRepo = context.getBean(DadJokeRepository.class);
+
         List<DadJoke> dadJokes = new ArrayList<>(List.of(
                 new DadJoke(1, "I'm reading a book on anti-gravity. It's impossible to put down!"),
                 new DadJoke(2, "Did you hear about the restaurant on the moon? Great food, no atmosphere."),
