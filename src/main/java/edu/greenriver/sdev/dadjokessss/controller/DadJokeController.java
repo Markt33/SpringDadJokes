@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class DadJokeController {
 
     private DadJokeService service;
@@ -14,7 +15,7 @@ public class DadJokeController {
         this.service = service;
     }
 
-    @GetMapping("jokes/all")
+    @GetMapping("jokes")
     public List<DadJoke> all(){
         return service.all();
     }
@@ -24,13 +25,13 @@ public class DadJokeController {
         service.addJoke(newJoke);
     }
 
-    @PutMapping("movies/{id}")
+    @PutMapping("jokes/{id}")
     public DadJoke updateJoke(@PathVariable int id,
                               @RequestBody DadJoke updateJoke){
         return service.updateJoke(updateJoke, id);
     }
 
-    @DeleteMapping("movies/{id}")
+    @DeleteMapping("jokes/{id}")
     public void deleteJoke(@PathVariable int id){
         service.deleteJoke(id);
     }

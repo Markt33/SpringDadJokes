@@ -16,7 +16,7 @@ public class DadJokessssApplication {
         ApplicationContext context = SpringApplication.run(DadJokessssApplication.class, args);
         DadJokeRepository dbRepo = context.getBean(DadJokeRepository.class);
 
-        List<DadJoke> dadJokes = new ArrayList<>(List.of(
+        List<DadJoke> jokes = new ArrayList<>(List.of(
                 new DadJoke(1, "I'm reading a book on anti-gravity. It's impossible to put down!"),
                 new DadJoke(2, "Did you hear about the restaurant on the moon? Great food, no atmosphere."),
                 new DadJoke(3, "Why don't scientists trust atoms? Because they make up everything."),
@@ -29,6 +29,6 @@ public class DadJokessssApplication {
                 new DadJoke(10, "I'm on a seafood diet. I see food and I eat it.")
         ));
 
-        dbRepo.saveAll(dadJokes);
+        dbRepo.saveAll(jokes);
     }
 }
